@@ -28,13 +28,13 @@
 
 	<issueManagement>
 		<system>GitHub</system>
-		<url>https://github.com/ralscha/sse-eventbus-demo/issues</url>
+		<url>https://github.com/faizakram/PUSH-NOTIFICATION.git</url>
 	</issueManagement>
 
 	<scm>
-		<connection>scm:git:git@github.com:ralscha/sse-eventbus-demo.git</connection>
-		<developerConnection>scm:git:git@github.com:ralscha/sse-eventbus-demo.git</developerConnection>
-		<url>https://github.com/ralscha/sse-eventbus-demo.git</url>
+		<connection>scm:git:git@github.com:faizakram/PUSH-NOTIFICATION.git</connection>
+		<developerConnection>scm:git@github.com:faizakram/PUSH-NOTIFICATION.git</developerConnection>
+		<url>https://github.com/faizakram/PUSH-NOTIFICATION.git</url>
 	</scm>
 
 	<parent>
