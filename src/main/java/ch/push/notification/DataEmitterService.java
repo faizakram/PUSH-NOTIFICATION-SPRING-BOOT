@@ -1,8 +1,9 @@
-package ch.rasc;
+package ch.push.notification;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
@@ -13,16 +14,12 @@ import ch.rasc.sse.eventbus.SseEvent.Builder;
 @Service
 public class DataEmitterService {
 
-	private final ApplicationEventPublisher eventPublisher;
-	// OR: private final ApplicationContext ctx;
-	// this class implements the ApplicationEventPublisher interface
 	private List<String> list = new ArrayList<String>(); 
 	
 	//private final static Random random = new Random();
 	
-	public DataEmitterService(ApplicationEventPublisher eventPublisher) {
-		this.eventPublisher = eventPublisher;
-	}
+	@Autowired
+	private ApplicationEventPublisher eventPublisher;
 
 	public void addListInfo(String id)
 	{
@@ -47,17 +44,18 @@ public class DataEmitterService {
 		
 		if(list.indexOf(str) == 0)
 		{
-		Builder builder1 = new SseEvent.Builder();
+			
+		/*Builder builder1 = new SseEvent.Builder();
 		Builder builder = builder1.from(SseEvent.ofData("Delhi"));
-		builder.addClientId(str);
-		this.eventPublisher.publishEvent(builder.build());
+		builder.addClientId(str);*/
+		this.eventPublisher.publishEvent(SseEvent.builder().addClientId(str).event("DataOnline").data("Delhi").build());
 		}
 		else
 		{
 			Builder builder1 = new SseEvent.Builder();
 			Builder builder = builder1.from(SseEvent.ofData("Goa"));
 			builder.addClientId(str);
-			this.eventPublisher.publishEvent(builder.build());
+			this.eventPublisher.publishEvent(SseEvent.builder().addClientId(str).event("DataOnline").data("Goa").build());
 		}
 	}
 

@@ -1,4 +1,4 @@
-package ch.rasc;
+package ch.push.notification;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,15 +15,12 @@ import ch.rasc.sse.eventbus.SseEventBus;
 @Controller
 public class SseController {
 
-	private final SseEventBus eventBus;
-		
-	
 	@Autowired
 	private DataEmitterService dataEmitterService;
 	
-	public SseController(SseEventBus eventBus) {
-		this.eventBus = eventBus;
-	}
+	@Autowired
+	private SseEventBus eventBus;
+	
 
 	//@GetMapping("/register/{id}")
 	@RequestMapping(value = "/register/{id}",method = RequestMethod.GET)
@@ -38,7 +35,7 @@ public class SseController {
 		}
 		//this.eventBus.setDataObjectConverters(dataObjectConverters);
 		//return this.eventBus.createSseEmitter(id, events);
-		return this.eventBus.createSseEmitter(id, SseEvent.DEFAULT_EVENT);
+		return this.eventBus.createSseEmitter(id, "DataOnline");
 	}
 	
 	

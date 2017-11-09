@@ -75,7 +75,7 @@ window.onbeforeunload = () => {
 }
 
 eventSource = new EventSource(`/register/${uuid}`);
-eventSource.addEventListener('message', response => {
+eventSource.addEventListener('DataOnline', response => {
 	console.log(response.data);
 	/*for (let line of response.data.split('\n')) {
 		console.log(line);
