@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: sse-eventbus-demo
+Implementation-Version: 1.1.0
+Built-By: 13615
+Implementation-Vendor-Id: ch.rasc
+Build-Jdk: 1.8.0_91
+Implementation-URL: http://projects.spring.io/spring-boot/sse-eventbus
+ -demo/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+
