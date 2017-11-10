@@ -8,3 +8,16 @@
 			<version>4.2.4.RELEASE</version>
 		</dependency>
   </code>
+
+# The resion is SseEmiter Have parameterised constructor in 
+
+#org.springframework.web.servlet.mvc.method.annotation.SseEmitter
+
+#When calling 
+<code>
+	eventBus.createSseEmitter(id, SseEvent.DEFAULT_EVENT);
+	// it calls SseEventBus -->
+	public SseEmitter createSseEmitter(String clientId, Long timeout, boolean unsubscribe,
+			boolean completeAfterMessage, String... events)
+	SseEmitter emitter = new SseEmitter(timeout);
+</code>
