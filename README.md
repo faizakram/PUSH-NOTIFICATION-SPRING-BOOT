@@ -14,10 +14,10 @@
 #org.springframework.web.servlet.mvc.method.annotation.SseEmitter
 
 #When calling 
-<code>
+<pre>
 	eventBus.createSseEmitter(id, SseEvent.DEFAULT_EVENT);
 	// it calls SseEventBus -->
 	public SseEmitter createSseEmitter(String clientId, Long timeout, boolean unsubscribe,
 			boolean completeAfterMessage, String... events)
 	SseEmitter emitter = new SseEmitter(timeout);
-</code>
+</pre>
